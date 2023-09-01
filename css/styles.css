@@ -5,6 +5,7 @@
     letter-spacing: normal;
     line-height: 1.2; */
 :root {
+  scroll-behavior: smooth;
   /* Fonts */
   --main-font: Roboto, sans-serif;
   --secondary-font: Raleway, sans-serif;
@@ -15,7 +16,7 @@
   --light-cl: #f4f4fd;
   --primary-cl: #4d5ae5;
   --dark-cl: #434455;
-  /* BackgroundColors */
+  /* Background Colors */
   --main-bg-cl: #fff;
   --hero-bg-cl: #2e2f42;
   --light-bg-cl: #f4f4fd;
@@ -66,7 +67,7 @@ ul {
 .list {
   list-style: none;
   margin: 0;
-  padding: 0;
+  padding-left: 0;
 }
 
 .link {
@@ -99,10 +100,6 @@ img {
   overflow: hidden;
 }
 
-section {
-  padding: 60px 0;
-}
-
 /* width: ширина контентної частини(1128px) + падінги по боках(15px) = 1158px */
 
 .container {
@@ -111,24 +108,27 @@ section {
   margin: 0 auto;
 }
 
+.header {
+  border-bottom: 1px solid var(--accent-cl);
+}
+
 .header-container {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  border-bottom: 1px solid var(--accent-cl);
 }
 
 .header-nav,
 .header-contacts {
   display: flex;
+  align-items: center;
 }
 
 .header-nav {
   margin-right: 332px;
 }
 
-.header-logo,
-.footer-logo {
+.header-logo {
   color: var(--primary-cl);
   font-family: var(--secondary-font);
   font-size: 18px;
@@ -136,14 +136,13 @@ section {
   line-height: 1.17;
   letter-spacing: 0.03em;
   text-transform: uppercase;
-  display: inline-flex;
   padding-top: 24px;
   padding-bottom: 24px;
+  margin-right: 76px;
 }
 
 .header-logo-accent {
   color: var(--main-cl);
-  margin-right: 76px;
 }
 
 .header-logo,
@@ -190,13 +189,13 @@ section {
 **/
 
 .hero {
-  padding: 0 0 60px;
+  padding: 188px 0;
+  background-color: var(--hero-bg-cl);
 }
 
 .hero-container {
   width: 1440px;
-  min-height: 600px;
-  background-color: var(--hero-bg-cl);
+  max-height: 600px;
 }
 
 .hero-title {
@@ -205,12 +204,14 @@ section {
   font-weight: var(--header-fw);
   line-height: 1.07;
   letter-spacing: var(--main-lt-space);
-  width: 496px;
+  max-width: 496px;
   text-align: center;
-  padding: 188px 472px 48px;
+  padding: 0 472px 48px;
 }
 
 .hero-btn {
+  display: block;
+  margin: 0 auto;
   color: var(--white-cl);
   font-family: inherit;
   font-size: var(--default-fs);
@@ -218,17 +219,15 @@ section {
   line-height: var(--main-lh);
   letter-spacing: var(--header-lt-space);
   background-color: var(--primary-cl);
+  border: none;
   border-radius: 4px;
-  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.15);
-  padding: 16px 32px;
-  min-width: 105px;
-  min-height: 24px;
+  min-width: 169px;
+  height: 56px;
   cursor: pointer;
 }
 
-.hero-wrapper {
-  display: flex;
-  justify-content: center;
+.button {
+  padding: 16px 32px;
 }
 
 .hero-btn-link:hover,
@@ -242,17 +241,26 @@ section {
   |============================
 **/
 
-.features {}
+.features {
+  padding: 120px 0;
+}
+
+.features,
+.teamcards {
+  font-size: var(--header-fs);
+  font-weight: var(--medium-fw);
+  line-height: var(--header-lh);
+}
 
 .features-list {
   display: flex;
-  justify-content: space-between;
   gap: 24px;
 }
 
 .features-item {
-  min-width: 264px;
-  min-height: 104px;
+  flex-basis: calc((100% - 3 * 24px) / 4);
+  width: 264px;
+  min-height: 72px;
 }
 
 .features-subtitle {
@@ -271,27 +279,8 @@ section {
   font-weight: var(--default-fw);
 }
 
-.filter-btns-link {
-  color: var(--primary-cl);
-  font-family: inherit;
-  font-size: var(--default-fs);
-  font-weight: var(--medium-fw);
-  line-height: var(--main-lh);
-  letter-spacing: var(--header-lt-space);
-  cursor: pointer;
-}
-
-.filter-btns-link:hover,
-.filter-btns-link:focus {
-  color: var(--white-cl);
-  background-color: var(--pressed-bg-cl);
-}
-
-.features,
-.teamcards {
-  font-size: var(--header-fs);
-  font-weight: var(--medium-fw);
-  line-height: var(--header-lh);
+.features-text {
+  width: 264px;
 }
 
 /**
@@ -314,7 +303,10 @@ section {
   flex-wrap: wrap;
   margin: 0;
   gap: 24px;
-  justify-content: space-between;
+}
+
+.what-are-we-item {
+  flex-basis: calc((100% - 48px) / 3);
 }
 
 /**
@@ -353,6 +345,7 @@ section {
   padding-bottom: 0px;
   text-align: center;
   flex-basis: calc((100% - 24px * 3) / 4);
+  border-radius: 0px 0px 4px 4px;
 }
 
 .teamcards-content-title {
@@ -381,18 +374,17 @@ section {
   object-position: center;
 }
 
-.footer-logo {
-  padding: 100px 0 16px;
-}
-
 /**
   |============================
   | portfolio styles
   |============================
 **/
+.portfolio-container {
+  padding: 96px 0 120px 0;
+}
 
 .filters-container {
-  padding: 36px 0 72px;
+  padding-bottom: 72px;
 }
 
 .filter-btns {
@@ -402,23 +394,35 @@ section {
   gap: 24px;
 }
 
-.filter-btns-item {}
-
 .filter-btns-link {
+  color: var(--primary-cl);
+  font-family: inherit;
+  font-size: var(--default-fs);
+  font-weight: var(--medium-fw);
+  line-height: var(--main-lh);
+  letter-spacing: var(--header-lt-space);
   padding: 12px 24px;
   border-radius: 4px;
   border: 1px solid var(--accent-cl);
+  cursor: pointer;
+}
+
+.filter-btns-link:hover,
+.filter-btns-link:focus {
+  color: var(--white-cl);
+  background-color: var(--pressed-bg-cl);
+  border: 1px solid transparent;
 }
 
 .project-cards-container {
-  padding-bottom: 60px;
   margin: 0 auto;
 }
 
 .project-cards-list {
   display: flex;
   flex-wrap: wrap;
-  gap: 24px;
+  column-gap: 24px;
+  row-gap: 48px;
 }
 
 .project-cards-item {
@@ -426,9 +430,9 @@ section {
 }
 
 .project-cards-wrapper {
-  border: 1px solid var(--accent-cl);
-  background: var(--white, #FFF);
+  background: var(--main-bg-cl);
   padding: 32px 16px;
+  border: 1px solid var(--accent-cl);
   border-top: none;
 }
 
@@ -439,8 +443,25 @@ section {
 **/
 
 .footer {
-  min-height: 312px;
   background-color: var(--hero-bg-cl);
+  padding: 100px 0;
+}
+
+.footer-container {
+  max-height: 312px;
+}
+
+.footer-logo {
+  color: var(--primary-cl);
+  font-family: var(--secondary-font);
+  font-size: 18px;
+  font-weight: 800;
+  line-height: 1.17;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  display: inline-block;
+  padding-top: 21px;
+  margin-bottom: 16px;
 }
 
 .footer-logo-accent,
@@ -452,5 +473,4 @@ section {
   font-size: var(--default-fs);
   font-weight: var(--default-fw);
   width: 264px;
-  padding-bottom: 100px;
 }
