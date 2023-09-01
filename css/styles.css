@@ -379,11 +379,11 @@ img {
   | portfolio styles
   |============================
 **/
-.portfolio-container {
+.portfolio-main {
   padding: 96px 0 120px 0;
 }
 
-.filters-container {
+.filters-wrapper {
   padding-bottom: 72px;
 }
 
