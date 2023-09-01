@@ -100,8 +100,6 @@ img {
   overflow: hidden;
 }
 
-/* width: ширина контентної частини(1128px) + падінги по боках(15px) = 1158px */
-
 .container {
   width: 1158px;
   padding: 0 15px;
@@ -383,15 +381,12 @@ img {
   padding: 96px 0 120px 0;
 }
 
-.filters-wrapper {
-  padding-bottom: 72px;
-}
-
 .filter-btns {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 24px;
+  margin-bottom: 72px;
 }
 
 .filter-btns-link {
