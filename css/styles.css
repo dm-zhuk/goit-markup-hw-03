@@ -113,7 +113,6 @@ img {
 .header-container {
   display: flex;
   align-items: center;
-  justify-content: space-between;
 }
 
 .header-nav,
@@ -123,7 +122,7 @@ img {
 }
 
 .header-nav {
-  margin-right: 332px;
+  margin-right: auto;
 }
 
 .header-logo {
@@ -169,6 +168,9 @@ img {
   display: block;
   padding-top: 24px;
   padding-bottom: 24px;
+  color: var(--dark-cl);
+  font-size: var(--default-fs);
+  font-weight: var(--default-fw);
 }
 
 .nav-item:hover,
@@ -204,7 +206,7 @@ img {
   letter-spacing: var(--main-lt-space);
   max-width: 496px;
   text-align: center;
-  padding: 0 472px 48px;
+  margin: 0 auto 48px auto;
 }
 
 .hero-btn {
@@ -270,15 +272,12 @@ img {
   margin-bottom: 8px;
 }
 
-.header-contacts-link,
 .features-text {
   color: var(--dark-cl);
   font-size: var(--default-fs);
   font-weight: var(--default-fw);
-}
-
-.features-text {
-  width: 264px;
+  letter-spacing: var(--main-lt-space);
+  line-height: var(--main-lh);
 }
 
 /**
@@ -455,7 +454,6 @@ img {
   letter-spacing: 0.03em;
   text-transform: uppercase;
   display: inline-block;
-  padding-top: 21px;
   margin-bottom: 16px;
 }
 
@@ -467,5 +465,7 @@ img {
 .footer-text {
   font-size: var(--default-fs);
   font-weight: var(--default-fw);
+  letter-spacing: var(--main-lt-space);
+  line-height: var(--main-lh);
   width: 264px;
 }
